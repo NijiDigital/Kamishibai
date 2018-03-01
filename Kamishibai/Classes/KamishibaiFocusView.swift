@@ -19,6 +19,7 @@ public class KamishibaiFocusView: UIView {
         layer.fillColor = UIColor.black.cgColor
         return layer
     }()
+    public var backgroundOpacity: CGFloat = 0.55
 
     // MARK: Initializing
     override init(frame: CGRect) {
@@ -36,7 +37,7 @@ public class KamishibaiFocusView: UIView {
     }
 
     func setup() {
-        backgroundColor = UIColor.black.withAlphaComponent(0.55)
+        backgroundColor = UIColor.black.withAlphaComponent(backgroundOpacity)
         layer.mask = maskLayer
         isUserInteractionEnabled = false
     }
