@@ -118,6 +118,13 @@ public class KamishibaiFocusViewController: UIViewController {
         }
     }
 
+    public func cleanViews() {
+      customViews.forEach { (view) in
+        view.removeFromSuperview()
+      }
+      customViews.removeAll()
+    }
+
     public func clean() {
         customViews.forEach { (view) in
             view.removeFromSuperview()
