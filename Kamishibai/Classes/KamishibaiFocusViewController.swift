@@ -80,10 +80,10 @@ public class KamishibaiFocusViewController: UIViewController {
         }
     }
 
-    public func addCustomView(view: UIView, position: FocusAccesoryViewPosition, completion: @escaping () -> Void = {}) {
+  public func addCustomView(view: UIView, position: FocusAccesoryViewPosition, sizeToFit: Bool = true, completion: @escaping () -> Void = {}) {
         self.customViews.append(view)
         self.view.addSubview(view)
-        view.sizeToFit()
+        if sizeToFit { view.sizeToFit() }
         switch position {
         case .topRight(let adjust):
             view.frame.origin.x = self.view.bounds.size.width - view.frame.size.width + adjust.x
