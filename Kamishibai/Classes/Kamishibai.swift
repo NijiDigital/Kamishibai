@@ -39,6 +39,7 @@ public class Kamishibai {
     public var completion: (() -> Void)?
     public let transition = KamishibaiTransitioning()
     public var focus = KamishibaiFocusViewController.create()
+    public static var backgroundOpacity: CGFloat = 0.55
 
     // MARK: Initialization
     public init(initialViewController: UIViewController) {
