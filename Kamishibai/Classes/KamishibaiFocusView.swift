@@ -36,8 +36,19 @@ public class KamishibaiFocusView: UIView {
     }
 
     func setup() {
+      if !UIAccessibilityIsReduceTransparencyEnabled() {
+        backgroundColor = .clear
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        //always fill the view
+        blurEffectView.frame = bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        addSubview(blurEffectView)
+      } else {
         backgroundColor = UIColor.black.withAlphaComponent(Kamishibai.backgroundOpacity)
-        layer.mask = maskLayer
+      }
+
+      layer.mask = maskLayer
         isUserInteractionEnabled = false
     }
 

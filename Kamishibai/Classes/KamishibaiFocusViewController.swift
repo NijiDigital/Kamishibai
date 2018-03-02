@@ -42,7 +42,6 @@ public class KamishibaiFocusViewController: UIViewController {
     func setupViews() {
         view.addSubview(focusView)
         view.backgroundColor = UIColor.clear
-//        view.isUserInteractionEnabled = false
     }
 
     // MARK: Public Methods
